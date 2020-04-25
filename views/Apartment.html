@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Apartment Registration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<style>
+  .contra {
+   background-color: lightgray ;
+}
+::placeholder {
+  color: darkgrey;
+  font-weight: 500;
+  
+}
+</style>
+
+</head>
+<body style=" background-color: #F7F7F9" >
+
+<div class="container text-center ">
+  <h2 style = " margin: 25px;">Apartment Registration System</h2>
+<div class="row">
+  <div class="col-sm-4 " style="margin-top: 5px; background-color: white; padding: 15px; border-radius: 5px; border: 1px solid lightgray;">
+    <form action="/post" method="POST">
+      <div class="form-group">
+        <input type="number" class="form-control" id="apartNo" placeholder="Enter Unique Apartment Number " >
+        <span style="color: red;" id = 'apartNoSpan' ></span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="apartName" placeholder="Enter Apartment Name">
+        <span style="color: red;" id = 'apartNameSpan' ></span>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="floorNo" placeholder="Enter Floor Number" >
+        <span style="color: red;" id = 'floorNoSpan' ></span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="buildingName" placeholder="Enter Building Name">
+        <span style="color: red;" id = 'buildingNameSpan' ></span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="address" placeholder="Enter Building Address">
+        <span style="color: red;" id = 'addressSpan' ></span>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="city" placeholder="Enter Building City">
+        <span style="color: red;" id = 'citySpan' ></span>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="apartAreaSqFeet" placeholder="Enter Building Area in Sq. Feet" >
+        <span style="color: red;" id = 'apartAreaSqFeetSpan' ></span>
+  
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="noOfRooms" placeholder="How many Rooms in apartment?" >
+        <span style="color: red;" id = 'noOfRoomsSpan' ></span>
+      </div>
+      <div class="form-group form-check">
+        <label class="form-check-label" style="font-weight: 500; color: #84757D;">
+          <input class="form-check-input" type="checkbox" id="balcony" > Balcony Available?
+        </label>
+      </div>
+      <div>
+      <button class="btn btn-primary" id="createApart">Create</button>
+      <button class="btn btn-primary" id="editApart">Edit</button>
+      <button class="btn btn-primary" id="delApart">Delete</button>
+    </div>
+    </form>
+  </div>
+  <!-- <div class="col-sm-5" ></div> -->
+  <div class="col-sm-6" style="margin-left: 25px; margin-top: 5px;">
+    <table class="table-bordered" style="background-color: white;" 
+    id= 'mytable'>
+      <thead>
+        <tr>
+          <th>Apartment#</th>
+          <th>ApartmentName</th>
+          <th>Floor#</th>
+          <th>BuildingName</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Area</th>
+          <th>No.Rooms</th>
+          <th>Balcony</th>      
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will come here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</body>
+<script src="./js/crud.js"></script>
+</html>
